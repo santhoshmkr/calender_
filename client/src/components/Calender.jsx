@@ -241,7 +241,7 @@ function Calender() {
           })}
         </div>
       </div>
-      <div className="w-1/2">
+      <div className="w-full">
         <div className="">
           <h2 className="text-lg font-semibold mb-4">
             {selectedDay ? selectedDay.toDateString() : ""}
