@@ -46,7 +46,7 @@ function Calender() {
   const fetchTasks = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/plan?date=${
+        `https://calender-lypl.onrender.com/plan?date=${
           selectedDate.toISOString().split("T")[0]
         }`
       );
@@ -90,7 +90,7 @@ function Calender() {
 
     // If all validations pass, proceed with adding the task
     try {
-        await axios.post("http://localhost:5000/plan", {
+        await axios.post("https://calender-lypl.onrender.com/plan", {
             date: selectedDay.toISOString().split("T")[0],
             todo: newTask,
             startTime: newTaskStartTime,
@@ -126,7 +126,7 @@ function Calender() {
 
   const handleDeleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/plan/${taskId}`);
+      await axios.delete(`https://calender-lypl.onrender.com/plan/${taskId}`);
       setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -135,7 +135,7 @@ function Calender() {
 
   const handleCompleteTask = async (taskId, taskIndex) => {
     try {
-      await axios.patch(`http://localhost:5000/plan/${taskId}`, {
+      await axios.patch(`https://calender-lypl.onrender.com/plan/${taskId}`, {
         completed: true,
       });
 
